@@ -1,0 +1,22 @@
+const axios = require('axios');
+
+const options = {
+  method: 'GET',
+  url: 'https://youtube-v31.p.rapidapi.com/captions',
+  params: {
+    part: 'snippet',
+    videoId: 'M7FIvfx5J10'
+  },
+  headers: {
+    'content-type': 'application/octet-stream',
+    'X-RapidAPI-Key': 'a6c980bd2emsh01725b4f951f516p14634djsn06f5357bff14',
+    'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
